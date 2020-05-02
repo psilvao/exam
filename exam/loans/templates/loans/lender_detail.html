@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lender</title>
+</head>
+<body>
+    <p>Name: {{lender.First_Name}}</p>
+    <p>Amount Balance: {{lender.Money}}</p>
+    <br>
+    <p>List of people who are in need to help</p>
+    <br>
+    {% for borrow in borrows %}
+    <p>Name {{borrow.First_Name}}</p>
+    <p>Subject {{borrow.Subject}}</p>
+    <p>Description {{borrow.Description}}</p>
+    <p>Money {{borrow.Money_Need}}</p>
+
+    {% endfor %}
+</body>
+</html>

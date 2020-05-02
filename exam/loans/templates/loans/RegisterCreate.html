@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="container">
+
+    <form action="" method="post" novalidate>
+        <div class="row">
+        <div class="col-sm">
+        <table id="Lender">
+            <thead><u>Lender</u></thead>
+         {% csrf_token %}
+        {{ aform.as_table}}
+        <tr><td><input type="submit" name="{{aform.prefix}}" value="Register" /></td></tr>
+        </table>
+        {% if user.is_aunthenticate %}
+           <p>Welcome, <b>{{ user.username }}</b></p>
+        {% else %}
+            <p>Welcome, Please <a href="/login"/>log in</a></p>
+        {% endif %}
+        </div>
+        <div class="col-sm">
+          <table id ="Borrow">
+            <thead><u>Borrow</u></thead>
+            {{ bform.as_table}}
+           <tr><td><input type="submit" name="{{bform.prefix}}" value="Register" /></td></tr>
+        </table>
+        </div>
+        </div>
+    </form>
+<
+</div>
+</body>
+</html>

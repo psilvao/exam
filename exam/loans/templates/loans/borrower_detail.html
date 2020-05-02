@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Borrower</title>
+</head>
+<body>
+    <div class="container">
+    <p>Name: {{borrow.First_Name}}</p>
+    <p>Amount Needed: {{borrow.Money_Need}}</p>
+    <p>Amount Raised: {{total.0.1}}</p>
+    <br>
+    <p>List of people who are in need to help</p>
+    <br>
+    <div class="row">
+    <table>
+        <tr><th>Name</th><th>Email</th><th>Amount Lent</th></tr>
+    {% for loan in loans %}
+    <tr>
+    
+    <td>{{loan.0}}</td>
+
+    <td>{{loan.1}}</td>
+
+    <td>{{loan.2}}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+</div>
+</div>
+</body>
+</html>
